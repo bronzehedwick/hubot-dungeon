@@ -1,0 +1,22 @@
+{
+  "name": "hubot-dungeon",
+  "version": "0.0.0",
+  "description": "A simple, comedic, beer-and-pretzels dungeon crawl for your chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bronzehedwick/hubot-dungeon.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "bronzehedwick",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/bronzehedwick/hubot-dungeon/issues"
+  },
+  "homepage": "https://github.com/bronzehedwick/hubot-dungeon"
+}
