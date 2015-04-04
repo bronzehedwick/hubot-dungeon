@@ -1,0 +1,36 @@
+{
+  "name": "",
+  "stats": {
+    "attack": "0",
+    "damage": "0",
+    "defense": "0",
+    "health": {
+      "max": "10",
+      "current": "10"
+    },
+    "luck": "0"
+  },
+  "equipped": {
+    "weapon": {
+      "name": "",
+      "attack": "0"
+    },
+    "armor": {
+      "name": "",
+      "defense": "0"
+    },
+    "hat": {
+      "name": ""
+    },
+    "boots": {
+      "name": ""
+    }
+  },
+  "inventory": {
+    "Bag of Golding": {
+      "description": "Changes any items you put in it into gold. Use with bog <name-of-item>"
+    }
+  },
+  "gold": "0"
+
+}
