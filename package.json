@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/bronzehedwick/hubot-dungeon/issues"
   },
-  "homepage": "https://github.com/bronzehedwick/hubot-dungeon"
+  "homepage": "https://github.com/bronzehedwick/hubot-dungeon",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-bump": "^0.3.0",
+    "gulp-eslint": "^0.8.0",
+    "gulp-watch": "^4.2.3"
+  }
 }

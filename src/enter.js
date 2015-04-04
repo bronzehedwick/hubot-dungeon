@@ -1,4 +1,4 @@
-(function() {
+(function Enter() {
   module.exports = function(robot) {
 
     return robot.respond(/dungeon me/i, function(msg) {
@@ -33,4 +33,4 @@
     });
 
   };
-}).call(this);
+}());

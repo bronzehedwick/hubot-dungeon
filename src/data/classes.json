@@ -1,0 +1,194 @@
+{
+  "burglar": {
+    "muscularity": "1",
+    "agilosity": "1",
+    "toughstitution": "1",
+    "luckification": "2",
+    "health": "11",
+    "passivepower": "Sneakification",
+    "activepower": "Dirty Stab",
+    "weapon": {
+      "name": "Butter Knife",
+      "type": "burglar",
+      "attack": "0"
+    },
+    "armor": {
+      "name": "Moth Eaten Cloak",
+      "type": "burglar",
+      "defense": "0"
+    },
+    "equipment": {
+      "name": "Gross Potion",
+      "stat": "health",
+      "amount": "3"
+    }
+  },
+  "minstral": {
+    "muscularity": "1",
+    "agilosity": "1",
+    "toughstitution": "1",
+    "luckification": "2",
+    "health": "11",
+    "passivepower": "Upbeat Song",
+    "activepower": "Distracting Antics",
+    "weapon": {
+      "name": "Sharpened Flute",
+      "type": "minstral",
+      "attack": "0"
+    },
+    "armor": {
+      "name": "Tattered Cape",
+      "type": "minstral",
+      "defense": "0"
+    },
+    "equipment": {
+      "name": "Gross Potion",
+      "stat": "health",
+      "amount": "3"
+    }
+  },
+  "viking": {
+    "muscularity": "2",
+    "agilosity": "1",
+    "toughstitution": "1",
+    "luckification": "1",
+    "health": "11",
+    "passivepower": "Norse Steel",
+    "activepower": "Rape and Pillage",
+    "weapon": {
+      "name": "Felt Axe",
+      "type": "viking",
+      "attack": "0"
+    },
+    "armor": {
+      "name": "Moldy Pelt",
+      "type": "viking",
+      "defense": "0"
+    },
+    "equipment": {
+      "name": "Gross Potion",
+      "stat": "health",
+      "amount": "3"
+    }
+  },
+  "knight": {
+    "muscularity": "2",
+    "agilosity": "1",
+    "toughstitution": "1",
+    "luckification": "1",
+    "health": "11",
+    "passivepower": "Charge!",
+    "activepower": "Challenge",
+    "weapon": {
+      "name": "Toy Sword",
+      "type": "knight",
+      "attack": "0"
+    },
+    "armor": {
+      "name": "Rusted Chainmail",
+      "type": "knight",
+      "defense": "0"
+    },
+    "equipment": {
+      "name": "Gross Potion",
+      "stat": "health",
+      "amount": "3"
+    }
+  },
+  "magician": {
+    "muscularity": "1",
+    "agilosity": "2",
+    "toughstitution": "1",
+    "luckification": "1",
+    "health": "11",
+    "passivepower": "Resistance",
+    "activepower": "Chaos Blast",
+    "weapon": {
+      "name": "Sad Wand",
+      "type": "magician",
+      "attack": "0"
+    },
+    "armor": {
+      "name": "Old Robes",
+      "type": "magician",
+      "defense": "0"
+    },
+    "equipment": {
+      "name": "Gross Potion",
+      "stat": "health",
+      "amount": "3"
+    }
+  },
+  "professor": {
+    "muscularity": "1",
+    "agilosity": "2",
+    "toughstitution": "1",
+    "luckification": "1",
+    "health": "11",
+    "passivepower": "Charge",
+    "activepower": "Stab",
+    "weapon": {
+      "name": "Busted Flintlock Pistol",
+      "type": "professor",
+      "attack": "0"
+    },
+    "armor": {
+      "name": "Sagging Hat",
+      "type": "professor",
+      "defense": "0"
+    },
+    "equipment": {
+      "name": "Gross Potion",
+      "stat": "health",
+      "amount": "3"
+    }
+  },
+  "priest": {
+    "muscularity": "1",
+    "agilosity": "1",
+    "toughstitution": "2",
+    "luckification": "1",
+    "health": "12",
+    "passivepower": "Holiness",
+    "activepower": "Rightious Damnning",
+    "weapon": {
+      "name": "Burnt Mace",
+      "type": "priest",
+      "attack": "0"
+    },
+    "armor": {
+      "name": "Stained Vestments",
+      "type": "priest",
+      "defense": "0"
+    },
+    "equipment": {
+      "name": "Gross Potion",
+      "stat": "health",
+      "amount": "3"
+    }
+  },
+  "hermit": {
+    "muscularity": "1",
+    "agilosity": "1",
+    "toughstitution": "2",
+    "luckification": "1",
+    "health": "12",
+    "passivepower": "Charge",
+    "activepower": "Summon Beasts",
+    "weapon": {
+      "name": "Crappy Stick",
+      "type": "hermit",
+      "attack": "0"
+    },
+    "armor": {
+      "name": "Shit Covered Loin Cloth",
+      "type": "hermit",
+      "defense": "0"
+    },
+    "equipment": {
+      "name": "Gross Potion",
+      "stat": "health",
+      "amount": "3"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-(function() {
+(function Stats() {
   module.exports = function(robot) {
 
     return robot.respond('/stats/i', function(msg) {
@@ -21,4 +21,4 @@
     });
 
   };
-}).call(this);
+}());
