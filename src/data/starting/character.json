@@ -33,7 +33,7 @@
       "activePower": {}
     },
     "hat": {
-      "name": ""
+      "name": "",
       "attack": "0",
       "damage": "0",
       "defense": "0",
@@ -44,7 +44,7 @@
       "activePower": {}
     },
     "boots": {
-      "name": ""
+      "name": "",
       "attack": "0",
       "damage": "0",
       "defense": "0",
