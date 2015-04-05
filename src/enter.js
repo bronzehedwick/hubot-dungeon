@@ -1,9 +1,11 @@
 module.exports = function(robot) {
   var startingCharacter = require('./data/starting/character.json'),
-      weapon = require('./includes/weapon.js');
+      make = require('./includes/make.js');
 
   return robot.respond(/dungeon me/i, function(msg) {
-    var character = startingCharacter;
+    var character = startingCharacter,
+        weapon = make.weapon(0),
+        armor = make.armor(0);
 
     // Check if the user is already created a character
     if (robot.brain.get(msg.message.user.name) !== null) {
@@ -12,7 +14,10 @@ module.exports = function(robot) {
 
     // Set the inital stats
     character.name = msg.message.user.name;
-    character.equipped.weapon.name = weapon.name(0);
+    character.inventory[weapon.name.toLowerCase().replace(/ /g, '_')] = weapon;
+    //console.log(character.inventory);
+    character.inventory[armor.name.toLowerCase().replace(/ /g, '_')] = armor;
+    //console.log(character.inventory);
 
     // Save
     robot.brain.set(msg.message.user.name, character);

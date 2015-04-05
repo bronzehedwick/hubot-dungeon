@@ -10,75 +10,11 @@
     },
     "luck": "0"
   },
-  "equipped": {
-    "weapon": {
-      "name": "",
-      "attack": "0",
-      "damage": "0",
-      "defense": "0",
-      "health": "0",
-      "luck": "0",
-      "passivePower": {},
-      "activePower": {}
-    },
-    "armor": {
-      "name": "",
-      "attack": "0",
-      "damage": "0",
-      "defense": "0",
-      "health": "0",
-      "luck": "0",
-      "description": "",
-      "passivePower": {},
-      "activePower": {}
-    },
-    "hat": {
-      "name": "",
-      "attack": "0",
-      "damage": "0",
-      "defense": "0",
-      "health": "0",
-      "luck": "0",
-      "description": "",
-      "passivePower": {},
-      "activePower": {}
-    },
-    "boots": {
-      "name": "",
-      "attack": "0",
-      "damage": "0",
-      "defense": "0",
-      "health": "0",
-      "luck": "0",
-      "description": "",
-      "passivePower": {},
-      "activePower": {}
-    },
-    "cloak": {
-      "name": "",
-      "attack": "0",
-      "damage": "0",
-      "defense": "0",
-      "health": "0",
-      "luck": "0",
-      "description": "",
-      "passivePower": {},
-      "activePower": {}
-    },
-    "ring": {
-      "name": "",
-      "attack": "0",
-      "damage": "0",
-      "defense": "0",
-      "health": "0",
-      "luck": "0",
-      "description": "",
-      "passivePower": {},
-      "activePower": {}
-    }
-  },
   "inventory": {
-    "Bag of Golding": {
+    "bag_of_golding": {
+      "name": "Bag of Golding",
+      "type": "other",
+      "equipped": "false",
       "description": "Changes any items you put in it into gold. Use with bog <name-of-item>"
     }
   },
