@@ -9,10 +9,8 @@ module.exports = function(robot) {
     }
 
     for (var item in character.equipped) {
-      if (character.equipped.hasOwnProperty(item)) {
-        if (character.equipped[item].name !== '') {
-          msg.reply(item + ': ' + character.equipped[item].name);
-        }
+      if (character.equipped.hasOwnProperty(item) && character.equipped[item].name !== '') {
+        msg.reply(item + ': ' + character.equipped[item].name);
       }
     }
 
