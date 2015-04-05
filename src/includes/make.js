@@ -1,19 +1,20 @@
-var random = require('./random.js'),
-    baseStats = {
-      'equipped': 'true',
-      'attack': '0',
-      'damage': '0',
-      'defense': '0',
-      'health': '0',
-      'luck': '0',
-      'passivePower': {},
-      'activePower': {}
-    };
+var random = require('./random.js');
+
+var baseStats = {
+  'equipped': 'true',
+  'attack': '0',
+  'damage': '0',
+  'defense': '0',
+  'health': '0',
+  'luck': '0',
+  'passivePower': {},
+  'activePower': {}
+};
 
 // Generate a weapon
 exports.weapon = function(level) {
-  var weapon = {},
-      weaponNames = require('../data/nouns/weapon_names.json');
+  var weaponNames = require('../data/nouns/weapon_names.json');
+  var weapon = {};
 
   if (level === 0) {
     var adjNeg = require('../data/adjectives/negative.json');
@@ -29,13 +30,14 @@ exports.weapon = function(level) {
 
 // Generate armor
 exports.armor = function(level) {
-  var armor = {},
-      armorNames = require('../data/nouns/armor_names.json');
+  var armorNames = require('../data/nouns/armor_names.json');
+  var armor = {};
 
   if (level === 0) {
     var adjNeg = require('../data/adjectives/negative.json'),
-        animals = require('../data/nouns/animals.json'),
-        armorName = armorNames[random(0, armorNames.length)];
+        animals = require('../data/nouns/animals.json');
+
+    var armorName = armorNames[random(0, armorNames.length)];
 
     armor = baseStats;
 
@@ -53,8 +55,8 @@ exports.armor = function(level) {
 
 // Generate hat
 exports.hat = function(level) {
-  var hat = {},
-      hatNames = require('../data/nouns/hat_names.json');
+  var hatNames = require('../data/nouns/hat_names.json');
+  var hat = {};
 
   if (level === 0) {
     var adjNeg = require('../data/adjectives/negative.json');
@@ -69,8 +71,8 @@ exports.hat = function(level) {
 
 // Generate boots
 exports.boots = function(level) {
-  var boots = {},
-      bootsNames = require('../data/nouns/boots_names.json');
+  var bootsNames = require('../data/nouns/boots_names.json');
+  var boots = {};
 
   if (level === 0) {
     var adjNeg = require('../data/adjectives/negative.json');
@@ -85,8 +87,8 @@ exports.boots = function(level) {
 
 // Generate ring
 exports.ring = function(level) {
-  var ring = {},
-      ringNames = require('../data/nouns/ring_names.json');
+  var ringNames = require('../data/nouns/ring_names.json');
+  var ring = {};
 
   if (level === 0) {
     var adjNeg = require('../data/adjectives/negative.json');
