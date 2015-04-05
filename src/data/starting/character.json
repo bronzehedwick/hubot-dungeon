@@ -4,20 +4,13 @@
     "attack": "0",
     "damage": "0",
     "defense": "0",
+    "luck": "0",
     "health": {
       "max": "10",
       "current": "10"
-    },
-    "luck": "0"
-  },
-  "inventory": {
-    "bag_of_golding": {
-      "name": "Bag of Golding",
-      "type": "other",
-      "equipped": "false",
-      "description": "Changes any items you put in it into gold. Use with bog <name-of-item>"
     }
   },
+  "inventory": {},
   "gold": "0"
 
 }
