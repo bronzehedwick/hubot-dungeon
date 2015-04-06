@@ -15,11 +15,11 @@ module.exports = function(robot) {
       argument = argument.join('_').toLowerCase();
       item = character.inventory[argument];
 
-      console.log(item);
       if (item === undefined) {
         return msg.reply('There is no item in your inventory by that name');
       }
 
+      // If an item has a stat bonus, print it
       for (var itemStat in item.stats) {
         if (item.stats.hasOwnProperty(itemStat) && item.stats[itemStat] !== 0) {
           msg.reply(itemStat + ': ' + item.stats[itemStat]);
@@ -27,6 +27,7 @@ module.exports = function(robot) {
         }
       }
 
+      // Print a message if there are no stat bonuses
       if (statCount === 0) {
         msg.reply('It\'s nothing special');
       }
