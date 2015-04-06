@@ -9,7 +9,7 @@ exports.weapon = function(level) {
     var adjNeg = require('../data/adjectives/negative.json');
 
     thisWeapon = {
-      'equipped': 'true',
+      'equipped': true,
       'stats': {
         'attack': 0,
         'damage': 0,
@@ -41,7 +41,7 @@ exports.armor = function(level) {
     var armorName = armorNames[random(0, armorNames.length)];
 
     thisArmor = {
-      'equipped': 'true',
+      'equipped': true,
       'stats': {
         'attack': 0,
         'damage': 0,
@@ -76,7 +76,7 @@ exports.hat = function(level) {
     var adjNeg = require('../data/adjectives/negative.json');
 
     thisHat = {
-      'equipped': 'true',
+      'equipped': true,
       'stats': {
         'attack': 0,
         'damage': 0,
@@ -105,7 +105,7 @@ exports.boots = function(level) {
     var adjNeg = require('../data/adjectives/negative.json');
 
     thisBoots = {
-      'equipped': 'true',
+      'equipped': true,
       'stats': {
         'attack': 0,
         'damage': 0,
@@ -134,7 +134,7 @@ exports.ring = function(level) {
     var adjNeg = require('../data/adjectives/negative.json');
 
     thisRing = {
-      'equipped': 'true',
+      'equipped': true,
       'stats': {
         'attack': 0,
         'damage': 0,
