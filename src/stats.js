@@ -2,7 +2,7 @@ module.exports = function(robot) {
 
   return robot.respond('/stats/i', function(msg) {
     var character = robot.brain.get(msg.message.user.name),
-        argument = msg.message.text.split(' ');
+        argument = msg.message.text.split(' '), item, statCount = 0;
 
     // Make sure the user has a character to print stats for
     if (character === null) {
@@ -10,10 +10,28 @@ module.exports = function(robot) {
     }
 
     // See if the user is asking for the stats of something specific
-    if (argument.length === 3) {
-      argument.splice(0, 2).toString().toLowerCase();
+    if (argument.length > 2) {
+      argument.splice(0, 2);
+      argument = argument.join('_').toLowerCase();
+      item = character.inventory[argument];
 
-      return msg.reply(argument);
+      console.log(item);
+      if (item === undefined) {
+        return msg.reply('There is no item in your inventory by that name');
+      }
+
+      for (var itemStat in item.stats) {
+        if (item.stats.hasOwnProperty(itemStat) && item.stats[itemStat] !== 0) {
+          msg.reply(itemStat + ': ' + item.stats[itemStat]);
+          statCount++;
+        }
+      }
+
+      if (statCount === 0) {
+        msg.reply('It\'s nothing special');
+      }
+
+      return true;
     }
 
     // Print out all stats

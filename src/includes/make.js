@@ -10,13 +10,17 @@ exports.weapon = function(level) {
 
     thisWeapon = {
       'equipped': 'true',
-      'attack': '0',
-      'damage': '0',
-      'defense': '0',
-      'health': '0',
-      'luck': '0',
-      'passivePower': {},
-      'activePower': {}
+      'stats': {
+        'attack': 0,
+        'damage': 0,
+        'defense': 0,
+        'health': 0,
+        'luck': 0,
+      },
+      'powers': {
+        'passivePower': {},
+        'activePower': {}
+      }
     };
     thisWeapon.name = adjNeg[random(0, adjNeg.length)] + ' ' + weaponNames[random(0, weaponNames.length)];
     thisWeapon.type = 'weapon';
@@ -38,13 +42,17 @@ exports.armor = function(level) {
 
     thisArmor = {
       'equipped': 'true',
-      'attack': '0',
-      'damage': '0',
-      'defense': '0',
-      'health': '0',
-      'luck': '0',
-      'passivePower': {},
-      'activePower': {}
+      'stats': {
+        'attack': 0,
+        'damage': 0,
+        'defense': 0,
+        'health': 0,
+        'luck': 0,
+      },
+      'powers': {
+        'passivePower': {},
+        'activePower': {}
+      }
     };
 
     if (armorName === 'Hide') {
@@ -69,13 +77,17 @@ exports.hat = function(level) {
 
     thisHat = {
       'equipped': 'true',
-      'attack': '0',
-      'damage': '0',
-      'defense': '0',
-      'health': '0',
-      'luck': '0',
-      'passivePower': {},
-      'activePower': {}
+      'stats': {
+        'attack': 0,
+        'damage': 0,
+        'defense': 0,
+        'health': 0,
+        'luck': 0,
+      },
+      'powers': {
+        'passivePower': {},
+        'activePower': {}
+      }
     };
     thisHat.name = adjNeg[random(1, adjNeg.length)] + ' ' + hatNames[random(1, hatNames.length)];
     thisHat.type = 'hat';
@@ -94,13 +106,17 @@ exports.boots = function(level) {
 
     thisBoots = {
       'equipped': 'true',
-      'attack': '0',
-      'damage': '0',
-      'defense': '0',
-      'health': '0',
-      'luck': '0',
-      'passivePower': {},
-      'activePower': {}
+      'stats': {
+        'attack': 0,
+        'damage': 0,
+        'defense': 0,
+        'health': 0,
+        'luck': 0,
+      },
+      'powers': {
+        'passivePower': {},
+        'activePower': {}
+      }
     };
     thisBoots.name = adjNeg[random(1, adjNeg.length)] + ' ' + bootsNames[random(1, bootsNames.length)];
     thisBoots.type = 'boots';
@@ -119,13 +135,17 @@ exports.ring = function(level) {
 
     thisRing = {
       'equipped': 'true',
-      'attack': '0',
-      'damage': '0',
-      'defense': '0',
-      'health': '0',
-      'luck': '0',
-      'passivePower': {},
-      'activePower': {}
+      'stats': {
+        'attack': 0,
+        'damage': 0,
+        'defense': 0,
+        'health': 0,
+        'luck': 0,
+      },
+      'powers': {
+        'passivePower': {},
+        'activePower': {}
+      }
     };
     thisRing.name = adjNeg[random(1, adjNeg.length)] + ' ' + ringNames[random(1, ringNames.length)];
     thisRing.type = 'ring';
