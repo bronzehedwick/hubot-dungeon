@@ -2,8 +2,7 @@ module.exports = function(robot) {
   var pluralize = require('./includes/pluralize.js');
 
   return robot.respond(/how deep/i, function(msg) {
-    //var level = robot.brain.get('level');
-    var level = 0;
+    var level = robot.brain.get('level');
 
     // Check if the user is already created a character
     if (robot.brain.get(msg.message.user.name) === null) {
