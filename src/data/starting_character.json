@@ -3,7 +3,7 @@
   "stats": {
     "attack": 0,
     "damage": 0,
-    "defense": 0,
+    "dodge": 0,
     "luck": 0,
     "health": {
       "max": 10,
