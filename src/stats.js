@@ -19,10 +19,20 @@ module.exports = function(robot) {
         return msg.reply('There is no item in your inventory by that name');
       }
 
+      // Print the item name
+      msg.reply('Stats for ' + item.name);
+
       // If an item has a stat bonus, print it
       for (var itemStat in item.stats) {
         if (item.stats.hasOwnProperty(itemStat) && item.stats[itemStat] !== 0) {
-          msg.reply(itemStat + ': ' + item.stats[itemStat]);
+          if (itemStat === 'damage') {
+            if (item.stats[itemStat].min === item.stats[itemStat].max) {
+              msg.reply(itemStat + ': ' + item.stats[itemStat].min);
+            }
+            else {
+              msg.reply(itemStat + ': ' + item.stats[itemStat].min + ' - ' + item.stats[itemStat].max);
+            }
+          }
           statCount++;
         }
       }

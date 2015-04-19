@@ -2,29 +2,37 @@ var random = require('./random.js');
 
 // Generate a weapon
 exports.weapon = function(level) {
-  var weaponNames = require('../data/weapon_names.json');
-  var thisWeapon = {};
+  var weaponNames = require('../data/weapon_names.json'),
+      adjNeg = require('../data/adj_negative.json');
 
-  if (level === 1) {
-    var adjNeg = require('../data/adj_negative.json');
+  var thisWeapon = {},
+      dmgMin, dmgMax;
 
-    thisWeapon = {
-      'equipped': true,
-      'stats': {
-        'attack': 0,
-        'damage': 0,
-        'defense': 0,
-        'health': 0,
-        'luck': 0,
+  dmgMin = Math.floor(level / 2);
+  dmgMin = (dmgMin < 1 ? 1 : dmgMin);
+  dmgMax = level + random(1, Math.floor(level / 2));
+  // max = L + random number between L / 2 rounded down (if 1, 1 or 2 instead)
+
+  thisWeapon = {
+    'equipped': false,
+    'stats': {
+      'attack': 0,
+      'damage': {
+        'min': dmgMin,
+        'max': dmgMax
       },
-      'powers': {
-        'passivePower': {},
-        'activePower': {}
-      }
-    };
-    thisWeapon.name = adjNeg[random(0, adjNeg.length)] + ' ' + weaponNames[random(0, weaponNames.length)];
-    thisWeapon.type = 'weapon';
-  }
+      'dodge': 0,
+      'health': 0,
+      'luck': 0,
+    },
+    'powers': {
+      'passivePower': {},
+      'activePower': {}
+    }
+  };
+
+  thisWeapon.name = adjNeg[random(0, adjNeg.length)] + ' ' + weaponNames[random(0, weaponNames.length)];
+  thisWeapon.type = 'weapon';
 
   return thisWeapon;
 };
