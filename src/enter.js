@@ -3,22 +3,24 @@ module.exports = function(robot) {
       make = require('./includes/make.js');
 
   return robot.respond(/dungeon me/i, function(msg) {
+    // Set the dungeon level if it doesn't already exist
+    var level = robot.brain.get('level');
+    if (level === null) {
+      robot.brain.set('level', 1);
+      level = 1;
+    }
+
+    // Generate the default stats and equipment
     var character = startingCharacter,
-        weapon = make.weapon(0),
-        armor = make.armor(0),
-        hat = make.hat(0),
-        boots = make.boots(0),
-        ring = make.ring(0),
-        level = robot.brain.get('level');
+        weapon = make.weapon(level),
+        armor = make.armor(level),
+        hat = make.hat(level),
+        boots = make.boots(level),
+        ring = make.ring(level);
 
     // Check if the user is already created a character
     if (robot.brain.get(msg.message.user.name) !== null) {
       return msg.reply('You are already in the dungeon');
-    }
-
-    // Set the dungeon level if it doesn't already exist
-    if (level === null) {
-      robot.brain.set('level', 1);
     }
 
     // Set the inital stats

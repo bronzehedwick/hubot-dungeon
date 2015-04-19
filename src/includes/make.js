@@ -5,7 +5,7 @@ exports.weapon = function(level) {
   var weaponNames = require('../data/nouns/weapon_names.json');
   var thisWeapon = {};
 
-  if (level === 0) {
+  if (level === 1) {
     var adjNeg = require('../data/adjectives/negative.json');
 
     thisWeapon = {
@@ -34,7 +34,7 @@ exports.armor = function(level) {
   var armorNames = require('../data/nouns/armor_names.json');
   var thisArmor = {};
 
-  if (level === 0) {
+  if (level === 1) {
     var adjNeg = require('../data/adjectives/negative.json'),
         animals = require('../data/nouns/animals.json');
 
@@ -72,7 +72,7 @@ exports.hat = function(level) {
   var hatNames = require('../data/nouns/hat_names.json');
   var thisHat = {};
 
-  if (level === 0) {
+  if (level === 1) {
     var adjNeg = require('../data/adjectives/negative.json');
 
     thisHat = {
@@ -101,7 +101,7 @@ exports.boots = function(level) {
   var bootsNames = require('../data/nouns/boots_names.json');
   var thisBoots = {};
 
-  if (level === 0) {
+  if (level === 1) {
     var adjNeg = require('../data/adjectives/negative.json');
 
     thisBoots = {
@@ -130,7 +130,7 @@ exports.ring = function(level) {
   var ringNames = require('../data/nouns/ring_names.json');
   var thisRing = {};
 
-  if (level === 0) {
+  if (level === 1) {
     var adjNeg = require('../data/adjectives/negative.json');
 
     thisRing = {
