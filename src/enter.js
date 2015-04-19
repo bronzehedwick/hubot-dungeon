@@ -1,5 +1,5 @@
 module.exports = function(robot) {
-  var startingCharacter = require('./data/starting/character.json'),
+  var startingCharacter = require('./data/starting_character.json'),
       make = require('./includes/make.js');
 
   return robot.respond(/dungeon me/i, function(msg) {
