@@ -20,7 +20,7 @@ module.exports = function(robot) {
       }
 
       // Print the item name
-      msg.reply('Stats for ' + item.name);
+      msg.reply('Stats for level ' + item.level + ' ' + item.name);
 
       // If an item has a stat bonus, print it
       for (var itemStat in item.stats) {

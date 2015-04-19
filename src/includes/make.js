@@ -6,15 +6,32 @@ exports.weapon = function(level) {
       adjNeg = require('../data/adj_negative.json');
 
   var thisWeapon = {},
-      dmgMin, dmgMax;
+      weaponLevelChance = random(1, 100),
+      dmgMin, dmgMax, weaponLevel;
 
-  dmgMin = Math.floor(level / 2);
+  // Determine weapon level, based on dungeon level
+  if (weaponLevelChance >= 80) {
+    // 20%: weapon level is higher than dungeon level
+    weaponLevel = level + 1;
+  }
+  else if (weaponLevel >= 30) {
+    // 50%: weapon level is the same as dungeon level
+    weaponLevel = level;
+  }
+  else {
+    // 30%: weapon level is lower than dungeon level
+    weaponLevel = level - 1;
+    weaponLevel = (weaponLevel < 1 ? 1 : weaponLevel);
+  }
+
+  // Weapon damage formula
+  dmgMin = Math.floor(weaponLevel / 2);
   dmgMin = (dmgMin < 1 ? 1 : dmgMin);
-  dmgMax = level + random(1, Math.floor(level / 2));
-  // max = L + random number between L / 2 rounded down (if 1, 1 or 2 instead)
+  dmgMax = weaponLevel + random(1, Math.floor(weaponLevel / 2));
 
   thisWeapon = {
     'equipped': false,
+    'level': weaponLevel,
     'stats': {
       'attack': 0,
       'damage': {
