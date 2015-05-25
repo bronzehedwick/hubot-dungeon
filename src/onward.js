@@ -7,7 +7,7 @@ module.exports = function(robot) {
       'current': 1,
       'max': random(1, 5) + 5,
       'description': 'This bare chamber echos with unfinished emptiness.'
-    }
+    };
   }
 
   return robot.respond(/onward/i, function(msg) {
