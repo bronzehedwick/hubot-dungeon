@@ -1,26 +1,11 @@
 module.exports = function(robot) {
-  var random = require('./includes/random.js');
-
-  // Generate initial room statistics
-  function initRoomStats() {
-    return {
-      'current': 1,
-      'max': random(1, 5) + 5,
-      'description': 'This bare chamber echos with unfinished emptiness.'
-    };
-  }
 
   return robot.respond(/onward/i, function(msg) {
+    var rooms = robot.brain.get('rooms');
+
     // Check if the user has created a character
     if (robot.brain.get(msg.message.user.name) === null) {
       return msg.reply('You\'re not in the dungeon yet!');
-    }
-
-    // Set the rooms statistics if the don't exist
-    var rooms = robot.brain.get('rooms');
-    if (rooms === null) {
-      robot.brain.set('rooms', initRoomStats());
-      rooms = robot.brain.get('rooms');
     }
 
     // Check if the user is in a fight
@@ -42,7 +27,6 @@ module.exports = function(robot) {
     rooms.current = rooms.current + 1;
     robot.brain.set('rooms', rooms);
 
-    console.log(robot.brain.get('rooms'));
     return msg.send('The party moves deeper into the dungeon.');
   });
 
