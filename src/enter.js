@@ -1,7 +1,7 @@
 module.exports = function(robot) {
   var startingCharacter = require('./data/starting_character.json'),
       make = require('./includes/make.js'),
-      random = require('./includes/random.js'),
+      initRoom = require('./includes/init_room.js'),
       rooms = robot.brain.get('rooms');
 
   return robot.respond(/dungeon me/i, function(msg) {
@@ -36,18 +36,9 @@ module.exports = function(robot) {
     // Save the character
     robot.brain.set(msg.message.user.name, character);
 
-    // Generate initial room statistics
-    function initRoomStats() {
-      return {
-        'current': 1,
-        'max': random(1, 5) + 5,
-        'description': 'This bare chamber echos with unfinished emptiness.'
-      };
-    }
-
     // Set the rooms statistics if they don't exist
     if (rooms === null) {
-      robot.brain.set('rooms', initRoomStats());
+      robot.brain.set('rooms', initRoom());
     }
 
     // Inform the chat what happened
