@@ -43,8 +43,8 @@ exports.weapon = function(level) {
       'luck': 0,
     },
     'powers': {
-      'passivePower': {},
-      'activePower': {}
+      'passive': {},
+      'active': {}
     }
   };
 
