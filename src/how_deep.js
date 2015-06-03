@@ -10,7 +10,7 @@ module.exports = function(robot) {
     }
 
     // Return the dungeon level
-    return msg.send('You\'re party is ' + level + ' ' + pluralize('level', level)  + ' deep in the dungeon');
+    return msg.send('You\'re party is ' + level + ' ' + pluralize('level', level) + ' deep in the dungeon');
   });
 
 };
