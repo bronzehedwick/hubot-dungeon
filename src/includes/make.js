@@ -14,7 +14,7 @@ exports.weapon = function(level) {
     // 20%: weapon level is higher than dungeon level
     weaponLevel = level + 1;
   }
-  else if (weaponLevel >= 30) {
+  else if (weaponLevelChance >= 30) {
     // 50%: weapon level is the same as dungeon level
     weaponLevel = level;
   }
