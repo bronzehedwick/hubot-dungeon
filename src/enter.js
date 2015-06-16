@@ -1,8 +1,9 @@
 module.exports = function(robot) {
   var startingCharacter = require('./data/starting_character.json'),
       make = require('./includes/make.js'),
-      initRoom = require('./includes/init_room.js'),
-      rooms = robot.brain.get('rooms');
+      initRoom = require('./includes/init_room.js');
+
+  var rooms = robot.brain.get('rooms');
 
   return robot.respond(/dungeon me/i, function(msg) {
     // Set the dungeon level if it doesn't already exist

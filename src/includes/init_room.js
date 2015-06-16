@@ -1,4 +1,4 @@
-module.exports = function(word, num) {
+module.exports = function() {
   // Generate initial room statistics
   var random = require('./random.js');
 

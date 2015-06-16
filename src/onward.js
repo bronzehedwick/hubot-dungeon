@@ -1,9 +1,11 @@
 module.exports = function(robot) {
 
   return robot.respond(/onward/i, function(msg) {
-    var rooms = robot.brain.get('rooms'),
-        initRoom = require('./includes/init_room.js'),
+    var initRoom = require('./includes/init_room.js'),
         spawn = require('./includes/spawn.js');
+
+    var rooms = robot.brain.get('rooms'),
+        level = robot.brain.get('level');
 
     // Check if the user has created a character
     if (robot.brain.get(msg.message.user.name) === null) {
@@ -18,7 +20,6 @@ module.exports = function(robot) {
     // If this is the last room on this level,
     // Increase the dungeon level and reset the room statistics
     if (rooms.current === rooms.max) {
-      var level = robot.brain.get('level');
       robot.brain.set('rooms', initRoom());
       robot.brain.set('level', level + 1);
 
@@ -29,7 +30,6 @@ module.exports = function(robot) {
     rooms.current = rooms.current + 1;
     robot.brain.set('rooms', rooms);
 
-    var level = robot.brain.get('level');
     spawn.monster(level);
 
     return msg.send('The party moves deeper into the dungeon.');

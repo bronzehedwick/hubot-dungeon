@@ -15,7 +15,7 @@ module.exports = function(robot) {
       argument = argument.join('_').toLowerCase();
       item = character.inventory[argument];
 
-      if (item === undefined) {
+      if (item === 'undefined') {
         return msg.reply('There is no item in your inventory by that name');
       }
 

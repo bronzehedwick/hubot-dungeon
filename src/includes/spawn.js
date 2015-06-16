@@ -1,10 +1,5 @@
 var random = require('./random.js');
 
-// Generate a monster
-exports.monster = function(level) {
-  return makeMonster(level);
-};
-
 function makeMonster(level) {
   var types = require('../data/monster_types.json');
 
@@ -22,7 +17,7 @@ function makeMonster(level) {
       'active': {}
     },
     'description': ''
-  }
+  };
 
   // Call monster-specific override functions
   if (typeof makeMonster[monster.type] === 'function') {
@@ -32,52 +27,57 @@ function makeMonster(level) {
 
 makeMonster.goblin = function() {
   console.log(this);
-}
+};
 
 makeMonster.fairy = function() {
   console.log(this);
-}
+};
 
 makeMonster.lycanthrope = function() {
    console.log(this);
-}
+};
 
 makeMonster.zombie = function() {
    console.log(this);
-}
+};
 
 makeMonster.skeleton = function() {
    console.log(this);
-}
+};
 
 makeMonster.vampire = function() {
    console.log(this);
-}
+};
 
 makeMonster.animal = function() {
    console.log(this);
-}
+};
 
 makeMonster.blob = function() {
    console.log(this);
-}
+};
 
 makeMonster.animalHybrid = function() {
    console.log(this);
-}
+};
 
 makeMonster.animalPeople = function() {
    console.log(this);
-}
+};
 
 makeMonster.bandit = function() {
    console.log(this);
-}
+};
 
 makeMonster.dragon = function() {
    console.log(this);
-}
+};
 
 makeMonster.ghost = function() {
    console.log(this);
-}
+};
+
+// Generate a monster
+exports.monster = function(level) {
+  return makeMonster(level);
+};

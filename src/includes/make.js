@@ -40,7 +40,7 @@ exports.weapon = function(level) {
       },
       'dodge': 0,
       'health': 0,
-      'luck': 0,
+      'luck': 0
     },
     'powers': {
       'passive': {},
@@ -72,7 +72,7 @@ exports.armor = function(level) {
         'damage': 0,
         'defense': 0,
         'health': 0,
-        'luck': 0,
+        'luck': 0
       },
       'powers': {
         'passivePower': {},
@@ -107,7 +107,7 @@ exports.hat = function(level) {
         'damage': 0,
         'defense': 0,
         'health': 0,
-        'luck': 0,
+        'luck': 0
       },
       'powers': {
         'passivePower': {},
@@ -136,7 +136,7 @@ exports.boots = function(level) {
         'damage': 0,
         'defense': 0,
         'health': 0,
-        'luck': 0,
+        'luck': 0
       },
       'powers': {
         'passivePower': {},
@@ -165,7 +165,7 @@ exports.ring = function(level) {
         'damage': 0,
         'defense': 0,
         'health': 0,
-        'luck': 0,
+        'luck': 0
       },
       'powers': {
         'passivePower': {},
