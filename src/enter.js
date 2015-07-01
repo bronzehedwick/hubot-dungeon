@@ -5,7 +5,7 @@ module.exports = function(robot) {
 
   var rooms = robot.brain.get('rooms');
 
-  return robot.respond(/dungeon me/i, function(msg) {
+  return robot.hear(/dungeon me/i, function(msg) {
     // Set the dungeon level if it doesn't already exist
     var level = robot.brain.get('level');
     if (level === null) {
