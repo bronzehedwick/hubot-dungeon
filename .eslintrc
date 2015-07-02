@@ -17,3 +17,4 @@ rules:
   strict: [0]
   wrap-iife: 2
   quotes: [2, 'single', 'avoid-escape']
+  no-underscore-dangle: [0]
