@@ -1,6 +1,6 @@
 module.exports = function(robot) {
 
-  return robot.respond('/stats/i', function(msg) {
+  return robot.hear('/stats/i', function(msg) {
     var character = robot.brain.get(msg.message.user.name),
         argument = msg.message.text.split(' '), item, statCount = 0;
 

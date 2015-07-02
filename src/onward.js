@@ -1,6 +1,6 @@
 module.exports = function(robot) {
 
-  return robot.respond(/onward/i, function(msg) {
+  return robot.hear(/onward/i, function(msg) {
     var initRoom = require('./includes/init_room.js'),
         spawn = require('./includes/spawn.js');
 
