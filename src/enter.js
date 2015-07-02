@@ -1,7 +1,7 @@
 module.exports = function(robot) {
   var startingCharacter = require('./data/starting_character.json'),
-      make              = require('./includes/make.js'),
-      initRoom          = require('./includes/init_room.js');
+      make = require('./includes/make.js'),
+      initRoom = require('./includes/init_room.js');
 
   var rooms = robot.brain.get('rooms');
 
@@ -15,11 +15,11 @@ module.exports = function(robot) {
 
     // Generate the default stats and equipment
     var character = startingCharacter,
-        weapon    = make.weapon(level),
-        armor     = make.armor(level),
-        hat       = make.hat(level),
-        boots     = make.boots(level),
-        ring      = make.ring(level);
+        weapon = make.weapon(level),
+        armor = make.armor(level),
+        hat = make.hat(level),
+        boots = make.boots(level),
+        ring = make.ring(level);
 
     // Check if the user is already created a character
     if (robot.brain.get(msg.message.user.name) !== null) {
@@ -27,12 +27,12 @@ module.exports = function(robot) {
     }
 
     // Set the inital stats
-    character.name                                                    = msg.message.user.name;
+    character.name = msg.message.user.name;
     character.inventory[weapon.name.toLowerCase().replace(/ /g, '_')] = weapon;
-    character.inventory[armor.name.toLowerCase().replace(/ /g, '_')]  = armor;
-    character.inventory[hat.name.toLowerCase().replace(/ /g, '_')]    = hat;
-    character.inventory[boots.name.toLowerCase().replace(/ /g, '_')]  = boots;
-    character.inventory[ring.name.toLowerCase().replace(/ /g, '_')]   = ring;
+    character.inventory[armor.name.toLowerCase().replace(/ /g, '_')] = armor;
+    character.inventory[hat.name.toLowerCase().replace(/ /g, '_')] = hat;
+    character.inventory[boots.name.toLowerCase().replace(/ /g, '_')] = boots;
+    character.inventory[ring.name.toLowerCase().replace(/ /g, '_')] = ring;
 
     // Save the character
     robot.brain.set(msg.message.user.name, character);
