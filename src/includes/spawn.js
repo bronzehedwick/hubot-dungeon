@@ -21,60 +21,62 @@ function makeMonster(level) {
 
   // Call monster-specific override functions
   if (typeof makeMonster[monster.type] === 'function') {
-    makeMonster[monster.type].call(monster);
+    return makeMonster[monster.type].call(monster);
   }
+
+  return monster;
 }
 
-makeMonster.goblin = function() {
-  console.log(this);
+makeMonster.goblin = function goblin() {
+  return this;
 };
 
-makeMonster.fairy = function() {
-  console.log(this);
+makeMonster.fairy = function fairy() {
+  return this;
 };
 
-makeMonster.lycanthrope = function() {
-   console.log(this);
+makeMonster.lycanthrope = function lycanthrope() {
+  return this;
 };
 
-makeMonster.zombie = function() {
-   console.log(this);
+makeMonster.zombie = function zombie() {
+  return this;
 };
 
-makeMonster.skeleton = function() {
-   console.log(this);
+makeMonster.skeleton = function skeleton() {
+  return this;
 };
 
-makeMonster.vampire = function() {
-   console.log(this);
+makeMonster.vampire = function vampire() {
+  return this;
 };
 
-makeMonster.animal = function() {
-   console.log(this);
+makeMonster.animal = function animal() {
+  return this;
 };
 
-makeMonster.blob = function() {
-   console.log(this);
+makeMonster.blob = function blob() {
+  return this;
 };
 
-makeMonster.animalHybrid = function() {
-   console.log(this);
+makeMonster.animalHybrid = function animalHybrid() {
+  return this;
 };
 
-makeMonster.animalPeople = function() {
-   console.log(this);
+makeMonster.animalPeople = function animalPeople() {
+  return this;
 };
 
-makeMonster.bandit = function() {
-   console.log(this);
+makeMonster.bandit = function bandit() {
+  return this;
 };
 
-makeMonster.dragon = function() {
-   console.log(this);
+makeMonster.dragon = function dragon() {
+  return this;
 };
 
-makeMonster.ghost = function() {
-   console.log(this);
+makeMonster.ghost = function ghost() {
+  return this;
 };
 
 // Generate a monster
