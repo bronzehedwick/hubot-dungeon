@@ -30,9 +30,10 @@ module.exports = function(robot) {
     rooms.current = rooms.current + 1;
     robot.brain.set('rooms', rooms);
 
-    spawn.monster(level);
+    var monster = spawn.monster(level);
+    console.log(monster.name);
 
-    return msg.send('The party moves deeper into the dungeon.');
+    return msg.send('The party moves deeper into the dungeon. Also, there is a ' + monster.name);
   });
 
 };

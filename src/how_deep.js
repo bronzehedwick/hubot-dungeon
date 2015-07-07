@@ -1,5 +1,5 @@
 module.exports = function(robot) {
-  var pluralize = require('./includes/pluralize.js');
+  var utils = require('./includes/utils.js');
 
   return robot.hear(/how deep/i, function(msg) {
     var level = robot.brain.get('level');
@@ -10,7 +10,7 @@ module.exports = function(robot) {
     }
 
     // Return the dungeon level
-    return msg.send('You\'re party is ' + level + ' ' + pluralize('level', level) + ' deep in the dungeon');
+    return msg.send('You\'re party is ' + level + ' ' + utils.pluralize('level', level) + ' deep in the dungeon');
   });
 
 };
