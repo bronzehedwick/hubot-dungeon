@@ -11,5 +11,16 @@
   "animalPeople",
   "bandit",
   "dragon",
-  "ghost"
+  "ghost",
+  "dinosaur",
+  "mutant",
+  "minotaur",
+  "orc",
+  "mite",
+  "animatedObject",
+  "medusa",
+  "hydra",
+  "ogre",
+  "sentientDisease",
+  "plant"
 ]

@@ -2,12 +2,12 @@ var random = require('./random.js'),
     utils = require('./utils.js');
 
 function makeMonster(level) {
-  var types = require('../data/monster_types.json');
+  var types = require('../data/monster_types.json'),
+      type = types[random(0, types.length)];
 
   var monster = {
-    'name': 'Monster',
+    'name': utils.capitalizeFirstLetter(type),
     'level': level,
-    'type': types[random(0, types.length)],
     'damage': 0,
     'dodge': 0,
     'health': {
@@ -22,21 +22,17 @@ function makeMonster(level) {
   };
 
   // Call monster-specific override functions
-  if (typeof makeMonster[monster.type] === 'function') {
-    return makeMonster[monster.type].call(monster);
+  if (typeof makeMonster[type] === 'function') {
+    return makeMonster[type].call(monster);
   }
 
   return monster;
 }
 
-makeMonster.goblin = function goblin() {
-  this.name = 'Goblin';
-
-  return this;
-};
-
 makeMonster.fairy = function fairy() {
-  this.name = 'Fairy';
+  if (random(1, 100) === 100) {
+    this.name = 'Leprechaun';
+  }
 
   return this;
 };
@@ -50,19 +46,20 @@ makeMonster.lycanthrope = function lycanthrope() {
 };
 
 makeMonster.zombie = function zombie() {
-  this.name = 'Zombie';
+  var genders = require('../data/genders.json'),
+      relationships = require('../data/relationships.json');
 
-  return this;
-};
+  var gender = genders[random(0, genders.length)],
+      relationship = relationships[gender][random(0, relationships[gender].length)],
+      relationNames;
 
-makeMonster.skeleton = function skeleton() {
-  this.name = 'Skeleton';
+  if (relationship !== 'Mom' || relationship !== 'Dad') {
+    gender = (gender === 'either' ? genders[random(0, 1)] : gender);
+    relationNames = require('../data/names_' + gender);
+    relationship = relationship + ' ' + relationNames[random(0, relationNames.length)];
+  }
 
-  return this;
-};
-
-makeMonster.vampire = function vampire() {
-  this.name = 'Vampire';
+  this.name = 'Zombie that used to be your ' + relationship;
 
   return this;
 };
@@ -70,7 +67,7 @@ makeMonster.vampire = function vampire() {
 makeMonster.animal = function animal() {
   var animals = require('../data/animals.json');
 
-  this.name = animals[random(0, animals.length)];
+  this.name = 'Angery ' + animals[random(0, animals.length)];
 
   return this;
 };
@@ -100,12 +97,6 @@ makeMonster.animalPeople = function animalPeople() {
   return this;
 };
 
-makeMonster.bandit = function bandit() {
-  this.name = 'Bandit';
-
-  return this;
-};
-
 makeMonster.dragon = function dragon() {
   var colors = require('../data/colors.json');
 
@@ -114,8 +105,18 @@ makeMonster.dragon = function dragon() {
   return this;
 };
 
-makeMonster.ghost = function ghost() {
-  this.name = 'Ghost';
+makeMonster.dinosaur = function dinosaur() {
+  var dinosaurs = require('../data/dinosaurs.json');
+
+  this.name = dinosaurs[random(0, dinosaurs.length)];
+
+  return this;
+};
+
+makeMonster.plant = function plant() {
+  var plants = require('../data/plants.json');
+
+  this.name = plants[random(0, plants.length)];
 
   return this;
 };

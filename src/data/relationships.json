@@ -1,0 +1,26 @@
+{
+  "female": [
+    "Mom",
+    "sister",
+    "aunt",
+    "granmother"
+  ],
+  "male": [
+    "Dad",
+    "brother",
+    "uncle",
+    "grandfather"
+  ],
+  "either": [
+    "cousin",
+    "second cousin",
+    "cousin once removed",
+    "friend",
+    "best friend",
+    "close friend",
+    "frienemy",
+    "BFF",
+    "acquaintance"
+  ]
+}
+
