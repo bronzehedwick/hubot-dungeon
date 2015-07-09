@@ -1,6 +1,6 @@
 module.exports = function(robot) {
 
-  return robot.hear(/look/i, function(msg) {
+  return robot.respond(/look/i, function(msg) {
     var rooms = robot.brain.get('rooms');
 
     // Check if the user is already created a character
