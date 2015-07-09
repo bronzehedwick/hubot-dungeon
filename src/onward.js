@@ -31,7 +31,6 @@ module.exports = function(robot) {
     robot.brain.set('rooms', rooms);
 
     var monster = spawn.monster(level);
-    console.log(monster.name);
 
     return msg.send('The party moves deeper into the dungeon. Also, there is a ' + monster.name);
   });

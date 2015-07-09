@@ -1,52 +1,31 @@
 var random = require('./random.js');
 
 // Generate a weapon
-exports.weapon = function(level) {
+exports.weapon = function weapon(level) {
   var weaponNames = require('../data/weapon_names.json'),
-      adjNeg = require('../data/adj_negative.json');
+      adjNeg = require('../data/adj_negative.json'),
+      formulas = require('./formulas.js'),
+      utils = require('./utils.js');
 
-  var thisWeapon = {},
-      weaponLevelChance = random(1, 100),
-      dmgMin, dmgMax, weaponLevel;
+  var weaponLevel = utils.levelSpread(level);
 
-  // Determine weapon level, based on dungeon level
-  if (weaponLevelChance >= 80) {
-    // 20%: weapon level is higher than dungeon level
-    weaponLevel = level + 1;
-  }
-  else if (weaponLevelChance >= 30) {
-    // 50%: weapon level is the same as dungeon level
-    weaponLevel = level;
-  }
-  else {
-    // 30%: weapon level is lower than dungeon level
-    weaponLevel = level - 1;
-    weaponLevel = (weaponLevel < 1 ? 1 : weaponLevel);
-  }
-
-  // Weapon damage formula
-  dmgMin = Math.floor(weaponLevel / 2);
-  dmgMin = (dmgMin < 1 ? 1 : dmgMin);
-  dmgMax = weaponLevel + random(1, Math.floor(weaponLevel / 2));
-
-  thisWeapon = {
-    'equipped': false,
-    'level': weaponLevel,
-    'stats': {
-      'attack': 0,
-      'damage': {
-        'min': dmgMin,
-        'max': dmgMax
-      },
-      'dodge': 0,
-      'health': 0,
-      'luck': 0
+  var thisWeapon = {
+    equipped: false,
+    level: weaponLevel,
+    stats: {
+      attack: 0,
+      damage: formulas.damage(weaponLevel),
+      dodge: 0,
+      health: 0,
+      luck: 0
     },
-    'powers': {
-      'passive': {},
-      'active': {}
+    powers: {
+      passive: {},
+      active: {}
     }
   };
+
+  console.log(weapon);
 
   thisWeapon.name = adjNeg[random(0, adjNeg.length)] + ' ' + weaponNames[random(0, weaponNames.length)];
   thisWeapon.type = 'weapon';
@@ -55,7 +34,7 @@ exports.weapon = function(level) {
 };
 
 // Generate armor
-exports.armor = function(level) {
+exports.armor = function armor(level) {
   var armorNames = require('../data/armor_names.json');
   var thisArmor = {};
 
@@ -66,17 +45,17 @@ exports.armor = function(level) {
     var armorName = armorNames[random(0, armorNames.length)];
 
     thisArmor = {
-      'equipped': true,
-      'stats': {
-        'attack': 0,
-        'damage': 0,
-        'defense': 0,
-        'health': 0,
-        'luck': 0
+      equipped: true,
+      stats: {
+        attack: 0,
+        damage: 0,
+        defense: 0,
+        health: 0,
+        luck: 0
       },
-      'powers': {
-        'passivePower': {},
-        'activePower': {}
+      powers: {
+        passivePower: {},
+        activePower: {}
       }
     };
 
@@ -93,7 +72,7 @@ exports.armor = function(level) {
 };
 
 // Generate hat
-exports.hat = function(level) {
+exports.hat = function hat(level) {
   var hatNames = require('../data/hat_names.json');
   var thisHat = {};
 
@@ -101,17 +80,17 @@ exports.hat = function(level) {
     var adjNeg = require('../data/adj_negative.json');
 
     thisHat = {
-      'equipped': true,
-      'stats': {
-        'attack': 0,
-        'damage': 0,
-        'defense': 0,
-        'health': 0,
-        'luck': 0
+      equipped: true,
+      stats: {
+        attack: 0,
+        damage: 0,
+        defense: 0,
+        health: 0,
+        luck: 0
       },
-      'powers': {
-        'passivePower': {},
-        'activePower': {}
+      powers: {
+        passivePower: {},
+        activePower: {}
       }
     };
     thisHat.name = adjNeg[random(1, adjNeg.length)] + ' ' + hatNames[random(1, hatNames.length)];
@@ -122,7 +101,7 @@ exports.hat = function(level) {
 };
 
 // Generate boots
-exports.boots = function(level) {
+exports.boots = function boots(level) {
   var bootsNames = require('../data/boots_names.json');
   var thisBoots = {};
 
@@ -130,17 +109,17 @@ exports.boots = function(level) {
     var adjNeg = require('../data/adj_negative.json');
 
     thisBoots = {
-      'equipped': true,
-      'stats': {
-        'attack': 0,
-        'damage': 0,
-        'defense': 0,
-        'health': 0,
-        'luck': 0
+      equipped: true,
+      stats: {
+        attack: 0,
+        damage: 0,
+        defense: 0,
+        health: 0,
+        luck: 0
       },
-      'powers': {
-        'passivePower': {},
-        'activePower': {}
+      powers: {
+        passivePower: {},
+        activePower: {}
       }
     };
     thisBoots.name = adjNeg[random(1, adjNeg.length)] + ' ' + bootsNames[random(1, bootsNames.length)];
@@ -151,7 +130,7 @@ exports.boots = function(level) {
 };
 
 // Generate ring
-exports.ring = function(level) {
+exports.ring = function ring(level) {
   var ringNames = require('../data/ring_names.json');
   var thisRing = {};
 
@@ -159,17 +138,17 @@ exports.ring = function(level) {
     var adjNeg = require('../data/adj_negative.json');
 
     thisRing = {
-      'equipped': true,
-      'stats': {
-        'attack': 0,
-        'damage': 0,
-        'defense': 0,
-        'health': 0,
-        'luck': 0
+      equipped: true,
+      stats: {
+        attack: 0,
+        damage: 0,
+        defense: 0,
+        health: 0,
+        luck: 0
       },
-      'powers': {
-        'passivePower': {},
-        'activePower': {}
+      powers: {
+        passivePower: {},
+        activePower: {}
       }
     };
     thisRing.name = adjNeg[random(1, adjNeg.length)] + ' ' + ringNames[random(1, ringNames.length)];

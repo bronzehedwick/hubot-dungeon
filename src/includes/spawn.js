@@ -1,25 +1,35 @@
 var random = require('./random.js'),
+    formulas = require('./formulas.js'),
     utils = require('./utils.js');
 
 function makeMonster(level) {
-  var types = require('../data/monster_types.json'),
-      type = types[random(0, types.length)];
+  var types = require('../data/monster_types.json');
+
+  var type = types[random(0, types.length)],
+      monsterLevel = utils.levelSpread(level),
+      numPlayers = process.env.HUBOT_DUNGEON_NUM_PLAYERS;
+
+  console.log(numPlayers);
 
   var monster = {
-    'name': utils.capitalizeFirstLetter(type),
-    'level': level,
-    'damage': 0,
-    'dodge': 0,
-    'health': {
-      'max': 0,
-      'current': 0
+    name: utils.capitalizeFirstLetter(type),
+    level: level,
+    stats: {
+      damage: formulas.damage(monsterLevel),
+      dodge: 0,
+      health: {
+        max: level * numPlayers * 5,
+        current: 0
+      },
+      powers: {
+        passive: {},
+        active: {}
+      },
     },
-    'powers': {
-      'passive': {},
-      'active': {}
-    },
-    'description': ''
+    description: ''
   };
+
+  console.log(monster);
 
   // Call monster-specific override functions
   if (typeof makeMonster[type] === 'function') {
@@ -47,11 +57,11 @@ makeMonster.lycanthrope = function lycanthrope() {
 
 makeMonster.zombie = function zombie() {
   var genders = require('../data/genders.json'),
-      relationships = require('../data/relationships.json');
+    relationships = require('../data/relationships.json');
 
   var gender = genders[random(0, genders.length)],
-      relationship = relationships[gender][random(0, relationships[gender].length)],
-      relationNames;
+    relationship = relationships[gender][random(0, relationships[gender].length)],
+    relationNames;
 
   if (relationship !== 'Mom' || relationship !== 'Dad') {
     gender = (gender === 'either' ? genders[random(0, 1)] : gender);
@@ -82,7 +92,7 @@ makeMonster.blob = function blob() {
 
 makeMonster.animalHybrid = function animalHybrid() {
   var animals = require('../data/animals.json'),
-      bodyParts = require('../data/body_parts.json');
+    bodyParts = require('../data/body_parts.json');
 
   this.name = 'Creature with the ' + bodyParts[random(0, bodyParts.length)] + ' of a ' + animals[random(0, animals.length)] + ' and the ' + bodyParts[random(0, bodyParts.length)] + ' of a ' + animals[random(0, animals.length)];
 
