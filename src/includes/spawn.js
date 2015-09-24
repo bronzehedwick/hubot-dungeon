@@ -7,27 +7,24 @@ function makeMonster(level) {
 
   var type = types[random(0, types.length)],
       monsterLevel = utils.levelSpread(level),
-      numPlayers = process.env.HUBOT_DUNGEON_NUM_PLAYERS;
-
-  console.log(numPlayers);
-
-  var monster = {
-    name: utils.capitalizeFirstLetter(type),
-    level: level,
-    stats: {
-      damage: formulas.damage(monsterLevel),
-      dodge: 0,
-      health: {
-        max: level * numPlayers * 5,
-        current: 0
-      },
-      powers: {
-        passive: {},
-        active: {}
-      },
-    },
-    description: ''
-  };
+      monsterHealth = level * process.env.HUBOT_DUNGEON_NUM_PLAYERS * 3,
+      monster = {
+        name: utils.capitalizeFirstLetter(type),
+        level: level,
+        stats: {
+          damage: formulas.damage(monsterLevel),
+          dodge: 0,
+          health: {
+            max: monsterHealth,
+            current: monsterHealth
+          },
+          powers: {
+            passive: {},
+            active: {}
+          },
+        },
+        description: ''
+      };
 
   console.log(monster);
 

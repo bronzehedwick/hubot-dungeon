@@ -38,6 +38,11 @@ module.exports = function(robot) {
     robot.brain.set(msg.message.user.name, character);
     robot.brain.set('players', msg.message.user.name);
 
+    // Save the number of active players
+    var numPlayers = robot.brain.get('players') && [];
+    numPlayers.push(msg.message.user.name);
+    process.env.HUBOT_DUNGEON_NUM_PLAYERS = numPlayers.length;
+
     // Set the rooms statistics if they don't exist
     if (rooms === null) {
       robot.brain.set('rooms', initRoom());

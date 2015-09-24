@@ -25,8 +25,6 @@ exports.weapon = function weapon(level) {
     }
   };
 
-  console.log(weapon);
-
   thisWeapon.name = adjNeg[random(0, adjNeg.length)] + ' ' + weaponNames[random(0, weaponNames.length)];
   thisWeapon.type = 'weapon';
 
