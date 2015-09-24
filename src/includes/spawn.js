@@ -21,7 +21,7 @@ function makeMonster(level) {
           powers: {
             passive: {},
             active: {}
-          },
+          }
         },
         description: ''
       };

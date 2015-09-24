@@ -4,7 +4,7 @@
   "description": "A simple, comedic, beer-and-pretzels dungeon crawl for your chat",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha --compilers coffee:coffee-script/register && gulp"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
@@ -20,14 +20,7 @@
   },
   "homepage": "https://github.com/bronzehedwick/hubot-dungeon",
   "devDependencies": {
-    "chai": "^3.0.0",
-    "coffee-script": "^1.9.3",
     "gulp": "^3.8.11",
-    "gulp-eslint": "^0.8.0",
-    "hubot": "^2.13.2",
-    "hubot-mock-adapter": "^1.0.0",
-    "hubot-mock-adapter-helper": "0.0.1",
-    "mocha": "^2.2.5",
-    "sinon": "^1.15.4"
+    "gulp-eslint": "^0.8.0"
   }
 }
